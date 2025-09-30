@@ -1,0 +1,25 @@
+# SpringBootPractice
+
+A beginner-friendly Spring Boot project demonstrating basic REST APIs.
+
+## Features
+
+- `GET /greet` → Returns "Hi!"
+- `GET /greet2?name=YourName` → Returns "Hi YourName!"
+- Demonstrates use of `@RestController` and `@RequestParam`.
+
+## How to Run
+
+1. Clone the repository.
+2. Open in IntelliJ or Eclipse.
+3. Run `SpringBootPracticeApplication.java`.
+4. Test APIs:
+   - `http://localhost:8080/greet` → "Hi!"
+   - `http://localhost:8080/greet2?name=Rohith` → "Hi Rohith!"
+   - `http://localhost:8080/greet2` → "Hi Guest!"
+
+## Requirements
+
+- Java 17+
+- Maven 3+
+- Spring Boot 3.x
