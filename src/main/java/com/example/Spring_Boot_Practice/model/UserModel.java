@@ -1,4 +1,4 @@
-package com.example.Spring_Boot_Practice.Model;
+package com.example.Spring_Boot_Practice.model;
 
 public class UserModel { // -> User will be a Model
     private String name; // -> fields : name

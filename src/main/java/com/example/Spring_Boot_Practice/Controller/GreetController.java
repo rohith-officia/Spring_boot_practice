@@ -1,7 +1,9 @@
 package com.example.Spring_Boot_Practice.Controller;
 
-import com.example.Spring_Boot_Practice.Model.UserModel;
-import org.apache.catalina.User;
+import com.example.Spring_Boot_Practice.model.UserEntity;
+import com.example.Spring_Boot_Practice.model.UserModel;
+import com.example.Spring_Boot_Practice.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -72,9 +74,19 @@ public class GreetController {
 //    ---------------------------------------------------------------------------------------------
     }
 
-    @DeleteMapping("/delete/{name}")
-    public void delete(@PathVariable String name){
-        list.removeIf(user -> user.getName().equals(name));
-    }
+//    @DeleteMapping("/delete/{name}")
+//    public void delete(@PathVariable String name){
+//        list.removeIf(user -> user.getName().equals(name));
+//    }
 
+    @DeleteMapping("/deleteUser/{name}")
+    public String deleteUser(@PathVariable String name) {
+        for (UserModel user : list) {
+            if (user.getName().equalsIgnoreCase(name)) {
+                list.remove(user);
+                return "User deleted successfully!";
+            }
+        }
+        return "User not found!";
+    }
 }
